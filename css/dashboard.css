@@ -1,0 +1,246 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color:#212121;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: auto;
+  margin: 1rem;
+  position: relative;
+  min-width: 280px;
+}
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-1:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.card-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.card-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.huge {
+    font-size:40px;
+}
+
+.zero-margin {
+    margin:0;
+}
+
+.panel-material-purple {
+    background-color:#3F51B5!important;
+    color:#FFF!important;
+    border-color:#3F51B5!important;
+}
+
+.panel-border-purple {   
+    border-color: #3f51b5!important;
+    border-width: 1px!important;
+    border-style: solid!important;
+    border-radius: 2px!important;
+}
+
+.panel-material-green {
+    background-color:#4CAF50!important;
+    color:#FFF!important;
+}
+
+.panel-border-green {   
+    border-color: #4CAF50!important;
+    border-width: 1px!important;
+    border-style: solid!important;
+    border-radius: 2px!important;
+}
+
+.panel-material-yellow {
+    background-color:#FF9800!important;
+    border-color:#FF9800;
+    color:#FFF!important;
+}
+
+.panel-border-yellow {   
+    border-color: #FF9800!important;
+    border-width: 1px!important;
+    border-style: solid!important;
+    border-radius: 2px!important;
+}
+
+.panel-material-red {
+    background-color:#D32F2F!important;
+    border-color:#FF9800;
+    color:#FFF!important;
+}
+
+.panel-border-red {   
+    border-color: #D32F2F!important;
+    border-width: 1px!important;
+    border-style: solid!important;
+    border-radius: 2px!important;
+}
+
+
+.panel-material-text {
+    color:#212121;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.goog-menu-vertical { 
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.goog-combobox input {
+    width:160px!important;
+
+}
+
+.panel-material-lightblue {
+    background-color:#2196f3!important;
+    border-color:#FF9800;
+    color:#FFF!important;
+}
+
+.panel-border-lightblue {   
+    border-color: #2196f3!important;
+    border-width: 1px!important;
+    border-style: solid!important;
+    border-radius: 2px!important;
+}
+
+.panel-material-brown {
+    background-color:#607d8b!important;
+    border-color:#FF9800;
+    color:#FFF!important;
+}
+
+.panel-border-brown {   
+    border-color: #607d8b!important;
+    border-width: 1px!important;
+    border-style: solid!important;
+    border-radius: 2px!important;
+}
+
+.nav > li {
+    margin-top:3px;
+}

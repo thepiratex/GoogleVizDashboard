@@ -1,0 +1,163 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="master.master.cs" Inherits="master" %>
+<!--
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+    
+    ________   ______     _____          _____       ______            ______          _         ______    ____  ____   ______       ___          _        _______      ______    
+|_   __  | |_   _ \   |_   _|        |_   _|     / ____ `.         |_   _ `.       / \      .' ____ \  |_   ||   _| |_   _ \    .'   `.       / \      |_   __ \    |_   _ `.  
+  | |_ \_|   | |_) |    | |            | |       `'  __) |           | | `. \     / _ \     | (___ \_|   | |__| |     | |_) |  /  .-.  \     / _ \       | |__) |     | | `. \ 
+  |  _| _    |  __'.    | |            | |   _   _  |__ '.           | |  | |    / ___ \     _.____`.    |  __  |     |  __'.  | |   | |    / ___ \      |  __ /      | |  | | 
+ _| |__/ |  _| |__) |  _| |_          _| |__/ | | \____) |          _| |_.' /  _/ /   \ \_  | \____) |  _| |  | |_   _| |__) | \  `-'  /  _/ /   \ \_   _| |  \ \_   _| |_.' / 
+|________| |_______/  |_____|        |________|  \______.'         |______.'  |____| |____|  \______.' |____||____| |_______/   `.___.'  |____| |____| |____| |___| |______.' 
+    
+    
+    Aah, look who's here.
+    Greetings, if you'd like to develop more on this dashboard. Please drop a mail to
+    Shantam_dhirender_mo@dell.com   
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+-->
+                                                                                                                                                                             
+
+<!DOCTYPE html>
+<!--[if IE]>
+<script type="text/javascript">
+window.location = "ieerror.html";
+</script>
+<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>EBI L3 Dashboard</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/dashboard.css" rel="stylesheet" />
+    <link href="css/util.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-material-design.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="js/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("43", {
+            'packages': ['corechart', 'controls', 'table', 'sankey']
+        });</script>
+    <script type="text/javascript">
+        window.onload = function() {
+            window.history.forward(1);
+        }
+    </script>
+</head>
+<body>
+
+
+
+    <form id="form1" runat="server">
+
+        <%--Navigation bar top start--%>
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="background: #333;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                        <a class="navbar-brand" href="index.aspx">EBI L3 Dashboard</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><% string userName = HttpContext.Current.User.Identity.Name;%>
+                            <a><%= userName %></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <%--Navigation bar top end--%>
+
+        <%--Main Container start--%>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-1 col-sm-1 sidebar" id="divMenu" runat="server" visible="true">
+                    <ul class="nav nav-sidebar">
+                        <li class="active"><a href="index.aspx">Overview</a></li>
+                        <li class="active"><a href="About.aspx">About</a></li>
+                    </ul>
+                </div>
+                <div id="divMainContent" runat="server" class="col-sm-offset-1 col-lg-11 col-lg-offset-1 main">
+
+
+                    <%--Content PlaceHoler1 START --%>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <%--Content PlaceHoler1 END --%>
+                </div>
+            </div>
+        </div>
+        <%--Main Container End--%>
+    </form>
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/material.js"></script>
+    <script type="text/javascript" src="js/ripples.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('a[href="#critical"]').click(function () {
+                window.location.replace('./Details.aspx?chartname=QuickLookUp&SelectedValue=Critical');
+            });
+            $('a[href="#OpenIncidentsThisWeek"]').click(function () {
+                window.location.replace('./Details.aspx?chartname=OpenIncidents&SelectedValue=LastWeek');
+            });
+            $('a[href="#OpenIncidents"]').click(function () {
+                window.location.replace('./Details.aspx?chartname=OpenIncidents&SelectedValue=Open');
+            });
+            $("[data-toggle=tooltip]").tooltip();
+
+        });
+    </script>
+
+</body>
+</html>
